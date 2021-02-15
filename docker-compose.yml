@@ -1,0 +1,38 @@
+version: '3'
+
+volumes: 
+  db-data:
+  gem_data:
+  node_modules:
+
+services: 
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    ports:
+      - '3000:3000'
+    volumes: 
+      - '.:/rails6-app'
+      - 'gem_data:/usr/local/bundle'
+      - 'node_modules:/app/node_modules'
+    environment:
+      - 'DATABASE_PASSWORD=postgres'
+    tty: true
+    stdin_open: true
+    depends_on: 
+      - db
+    links:
+      - db
+    
+    
+  
+  db:
+    image: postgres
+    volumes: 
+      - 'db-data:/var/lib/postgresl/data'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=postgres'
+      - 'POSTGRES_HOST_AUTH_METHOD=trust'
+    
+
