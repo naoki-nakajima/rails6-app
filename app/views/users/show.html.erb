@@ -5,7 +5,7 @@
     </div>
     <div class="col-md-8">
       <div class="row">
-        <h1><%= @user.name %></h1>
+        <h1><%= @user.username %></h1>
         <% if @user == current_user %>
           <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark edit-profile-btn" %>
           <button type="button" class="setting" data-toggle="modal" data-target="#exampleModal"></button>
@@ -28,13 +28,11 @@
           </div>
         </div>
       </div>
-      <% if @user == current_user %>
-        <div class="row">
-          <p>
-            <%= @user.email %>
-          </p>
-        </div>
-      <% end %>
+      <div class="row">
+        <p>
+          <%= @user.name %>
+        </p>
+      </div>
     </div>
   </div>
 </div>
