@@ -1,0 +1,65 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#glb_main {
+  width: 100%;
+  #glb_body {
+    width: 100%;
+    #content_container {
+      margin: 30px auto 0 auto;
+      padding: 0 0 50px 0;
+      width: 990px;
+      .content {
+        float: right;
+        section#recommend {
+          h2.title {
+            font-size: 18px;
+            color: #333;
+          }
+          ul.top_images {
+            margin: -8px 0 0 -55px;
+            li {
+              float: left;
+              margin: 18px 0 0 18px;
+              border: 1px #ddd solid;
+              background: #fff;
+              border-radius: 3px;
+              .image_container {
+                p.img {
+                  .img_top {
+                    width: 248px;
+                    height: 328px;
+                  }
+                }
+              }
+              .profile {
+                .content {
+                  .left {
+
+                  }
+                  .right {
+
+                  }
+                }
+                .btn_block {
+                  .btn_like {
+                    .btn {
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .side_bar {
+        width: 180px;
+        float: left;
+      }
+    }
+  }
+}
