@@ -6,6 +6,9 @@
 
 #glb_main {
   width: 100%;
+  padding-top: 54px;
+  height: 100vh;
+  overflow: scroll; 
   #glb_body {
     width: 100%;
     #content_container {

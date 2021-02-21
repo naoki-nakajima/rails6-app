@@ -28,7 +28,7 @@
       
       <%= yield %>
     
-      <%= render 'partial/footer' %>
+      <%= render 'partial/footer' if current_user %>
     </div>
   </body>
 </html>

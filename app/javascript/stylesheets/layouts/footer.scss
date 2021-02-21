@@ -1,4 +1,5 @@
 footer#glb_footer {
+  padding: 20px 0;
   .glb_footer_inner {
     width: 895px;
     margin: 0 auto;
@@ -6,11 +7,19 @@ footer#glb_footer {
       width: 20%;
       float: left;
       h2.title {
-        ul {
-          li {
-            a {
-
-            }
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          font-size: 13px;
+          padding-bottom: 3px;
+          a {
+            color: #333;
           }
         }
       }
