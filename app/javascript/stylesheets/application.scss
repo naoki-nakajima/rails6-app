@@ -5,7 +5,15 @@
 @import "users/devise";
 @import "users/show";
 @import "users/edit";
-@import "posts";
+@import "posts/index";
+@import "posts/show.scss";
+
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 #wrapper {
   background: #f6f7f8;
