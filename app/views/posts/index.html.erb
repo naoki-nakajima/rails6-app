@@ -19,11 +19,13 @@
                 <div class="profile clearfix">
                   <div class="content clearfix">
                     <div class="left_icon">
-                      <p class="img"></p>
+                      <%= image_tag avatar_url(current_user), class: "profile_icon" %>
                     </div>
                     <div class="right_name">
                       <div class="name">
-                        TestName
+                        <%= link_to(user_path(post.user)) do %>
+                          <%= post.user.username %>
+                        <% end %>
                       </div>
                     </div>
                   </div>

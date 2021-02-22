@@ -1,11 +1,20 @@
-.profile-wrap{
-  margin:40px 0px;
+.profile_container{
+  padding-top: 74px;
+  margin: 0 auto;
 }
 
 .round-img{
   border-radius:50%;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+}
+
+.profile_main {
+  width: 600px;
+  h1 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-top: 10px;
+  }
 }
 
 .edit-profile-btn {
@@ -29,5 +38,14 @@
   border: none;
   &:hover {
     cursor: pointer;
+  }
+}
+
+ul.row{
+  display: flex;
+  padding: 9px 0 3px 0;
+  li {
+    list-style: none;
+    padding-right: 25px;
   }
 }
