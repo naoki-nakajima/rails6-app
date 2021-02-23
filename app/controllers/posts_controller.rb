@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, expect: %i(index)
 
   before_action :set_post, only: %i(show destroy)
   
@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
   end
 
   def destroy
