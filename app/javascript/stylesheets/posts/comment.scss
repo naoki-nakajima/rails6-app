@@ -4,6 +4,7 @@
   padding: 25px 25px 25px 25px;
   border: 1px solid #ddd;
   background: #fff;
+  float: left;
   .comment_post { 
     min-width: 200px;
     min-height: 50px;
@@ -40,4 +41,16 @@
     }
     
   }
+}
+
+#like_container {
+  width: 357px;
+  height: 57px;
+  border: 1px solid #ddd;
+  background: #fff;
+  margin-left: 33px;
+  margin-top: 50px;
+  padding-top: 5px;
+  padding-left: 25px;
+  float: left;
 }
