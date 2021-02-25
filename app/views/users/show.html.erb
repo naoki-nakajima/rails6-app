@@ -45,7 +45,9 @@
   <div class="row py-5" style="width: 1000px;">
     <% @posts.each do |post| %>
       <div class="col-sm" >
-        <%= image_tag post.photos.first.image.url(:medium), class: "img_top  mx-auto" %>
+        <%= link_to(post_path(post)) do %>
+          <%= image_tag post.photos.first.image.url(:medium), class: "img_top  mx-auto" %>
+        <% end %>
       </div>
     <% end %>
   </div>
