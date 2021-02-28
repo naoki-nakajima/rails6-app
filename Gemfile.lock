@@ -76,6 +76,7 @@ GEM
       mimemagic (>= 0.3.0)
       mini_mime (>= 0.1.3)
       ssrf_filter (~> 1.0)
+    cocoon (1.2.15)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     devise (4.7.3)
@@ -218,6 +219,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   carrierwave (~> 2.0)
+  cocoon
   devise
   jbuilder (~> 2.7)
   listen (~> 3.3)
