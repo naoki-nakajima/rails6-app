@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :likes, only: %i(create destroy)
     resources :comments, only: %i(create destroy)
   end
+  resources :foods, only: %i(new create)
 end
