@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   def new
     @post = Post.new
-   
+    @food = @post.foods.build
   end
   
   def create

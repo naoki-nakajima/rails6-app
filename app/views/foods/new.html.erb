@@ -1,15 +1,15 @@
 <%= form_with(model: @post, local: true) do |f| %>
-    <%= f.label :caption %>
-    <%= f.text_field :caption %>
-    <div class="parents">
-        <%= f.fields_for :foods do |t| %>
-            <%= render "food_fields", f: t %>
-        <% end %>
-        <div class="links">
-            <%= link_to_add_association "追加", f, :foods %>
-        </div>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <div class="parents">
+    <%= f.fields_for :foods do |t| %>
+      <%= render "food_fields", f: t %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association "追加", f, :foods %>
     </div>
-    <div class="actions">
-        <%= f.submit %>
-    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>
