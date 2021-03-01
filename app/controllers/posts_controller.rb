@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
   before_action :authenticate_user!, expect: %i(index)
-
   before_action :set_post, only: %i(show destroy)
   
   def index
@@ -36,6 +35,12 @@ class PostsController < ApplicationController
       flash[:alert] = "投稿の削除に失敗しました"
     end
     redirect_to root_path
+  end
+
+  def hashtag
+    @user = current_user
+    @tag =  Hashtag.find_by(hashname: params[:name])
+    @posts = @tag.posts
   end
 
   private

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_28_015707) do
+ActiveRecord::Schema.define(version: 2021_03_01_132555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2021_02_28_015707) do
     t.index ["post_id"], name: "index_foods_on_post_id"
   end
 
+  create_table "hashtags", force: :cascade do |t|
+    t.string "hashname"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hashname"], name: "index_hashtags_on_hashname", unique: true
+  end
+
   create_table "likes", force: :cascade do |t|
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
@@ -49,6 +56,15 @@ ActiveRecord::Schema.define(version: 2021_02_28_015707) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_photos_on_post_id"
+  end
+
+  create_table "post_hashtag_relations", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "hashtag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hashtag_id"], name: "index_post_hashtag_relations_on_hashtag_id"
+    t.index ["post_id"], name: "index_post_hashtag_relations_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -80,5 +96,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_015707) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "photos", "posts"
+  add_foreign_key "post_hashtag_relations", "hashtags"
+  add_foreign_key "post_hashtag_relations", "posts"
   add_foreign_key "posts", "users"
 end

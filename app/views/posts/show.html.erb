@@ -88,10 +88,7 @@
             </div>
           </div>
           <div class="description_text">
-            鶏胸肉とブロッコリーを <br>
-            カレーマヨで味付けしました♡ <br>
-            マヨネーズを使っていても <br>
-            しつこくありません(*ˊ˘ˋ*)
+            <%= render_with_hashtags(@post.caption) %>
           </div>
         </div>
         <div class="how_to_cook ">
@@ -226,6 +223,7 @@
           <% end %>
         </div>
       </div>
+
       <div id="like_container">
           <div class="like_btn">
             <div id="like-icon-post-<%= @post.id.to_s %>">
