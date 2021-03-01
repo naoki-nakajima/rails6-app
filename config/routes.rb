@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
   
   get '/users/:id', to: 'users#show', as: 'user'
+  get '/post/hashtag/:name', to: 'posts#hashtag'
 
   resources :posts, only: %i(index new create show destroy) do
     resources :photos, only: %i(create)
