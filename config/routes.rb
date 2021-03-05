@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
   get '/post/hashtag/:name', to: 'posts#hashtag'
 
-  resources :posts, only: %i(index new create show destroy) do
+  resources :posts do
     resources :photos, only: %i(create)
     resources :likes, only: %i(create destroy)
     resources :comments, only: %i(create destroy)

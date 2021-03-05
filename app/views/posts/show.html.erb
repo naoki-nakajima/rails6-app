@@ -19,7 +19,8 @@
           <%= image_tag @post.photos.first.image.url(:medium), class: "main_photo" %>
           <div class="delete_btn">
             <% if user_signed_in? && current_user.id == @post.user_id %>
-              <%= link_to "消す", post_path(@post), method: :delete %>
+              <%= link_to "削除", post_path(@post), method: :delete %>
+              <%= link_to "編集", edit_post_path(@post) %>
             <% end %>
           </div>
         </div>
