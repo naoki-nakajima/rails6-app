@@ -34,64 +34,16 @@
               </div>
             </div>
             <div id="ingredients_lists">
-              <div class="ingredients_list">
-                <div class="ingredients_name">
-                  鶏胸肉
+              <% @post.foods.each do |food| %>
+                <div class="ingredients_list">
+                  <div class="ingredients_name">
+                    <%= food.ingredient %>
+                  </div>
+                  <div class="ingredients_quantity">
+                    <%= food.quantity %>
+                  </div>
                 </div>
-                <div class="ingredients_quantity">
-                  1枚（約400g）
-                </div>
-              </div>
-            </div>
-            <div id="ingredients_lists">
-              <div class="ingredients_list">
-                <div class="ingredients_name">
-                  鶏胸肉
-                </div>
-                <div class="ingredients_quantity">
-                  1枚（約400g）
-                </div>
-              </div>
-            </div>
-            <div id="ingredients_lists">
-              <div class="ingredients_list">
-                <div class="ingredients_name">
-                  鶏胸肉
-                </div>
-                <div class="ingredients_quantity">
-                  1枚（約400g）
-                </div>
-              </div>
-            </div>
-            <div id="ingredients_lists">
-              <div class="ingredients_list">
-                <div class="ingredients_name">
-                  鶏胸肉
-                </div>
-                <div class="ingredients_quantity">
-                  1枚（約400g）
-                </div>
-              </div>
-            </div>
-            <div id="ingredients_lists">
-              <div class="ingredients_list">
-                <div class="ingredients_name">
-                  鶏胸肉
-                </div>
-                <div class="ingredients_quantity">
-                  1枚（約400g）
-                </div>
-              </div>
-            </div>
-            <div id="ingredients_lists">
-              <div class="ingredients_list">
-                <div class="ingredients_name">
-                  鶏胸肉
-                </div>
-                <div class="ingredients_quantity">
-                  1枚（約400g）
-                </div>
-              </div>
+              <% end %>
             </div>
           </div>
           <div class="description_text">

@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to root_path
+      redirect_to post_path
       #flash[:notice] = "投稿が保存されました"
     else
       render :edit
@@ -40,10 +40,12 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
+    @food = Food.find_by(id: params[:id])
   end
 
   def destroy
     if @post.user == current_user
+      @post.destroy
       #flash[:notice] = "投稿が削除されました" if @post.destroy
     else
       #flash[:alert] = "投稿の削除に失敗しました"
