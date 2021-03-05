@@ -10,8 +10,9 @@
           </h1>
         </div>
         <div id="name_recipe_made" >
+          作った人 : 
           <%= link_to(user_path(@post.user)) do %>
-            <%= "作った人 : " + @post.user.name %>
+            <%= @post.user.name %>
           <% end %>
         </div>
         <div id="main_photo">
