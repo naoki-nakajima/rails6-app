@@ -17,7 +17,9 @@
         <div id="main_photo">
           <%= image_tag @post.photos.first.image.url(:medium), class: "main_photo" %>
           <div class="delete_btn">
-            <%= link_to "消す", post_path(@post), method: :delete %>
+            <% if user_signed_in? && current_user.id == @post.user_id %>
+              <%= link_to "消す", post_path(@post), method: :delete %>
+            <% end %>
           </div>
         </div>
         <div id="desc_and_ingredients">
