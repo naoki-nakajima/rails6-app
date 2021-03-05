@@ -10,7 +10,6 @@
             <% @posts.each do |post| %>
               <li>
                 <div class="image_container">
-                  <%= link_to "消す", post_path(post), method: :delete %>
                   <p class="img">
                     <%= link_to(post_path(post)) do %>
                       <%= image_tag post.photos.first.image.url(:medium), class: "img_top" %>

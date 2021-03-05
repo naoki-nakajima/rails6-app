@@ -6,7 +6,7 @@
       <div id="recipe_container" class="clearfix">
         <div id="recipe_title">
           <h1 class="recipe_title">
-            ブロッコリーと鶏胸肉のカレーマヨ炒め
+            <%= @post.caption %>
           </h1>
         </div>
         <div id="name_recipe_made" >
@@ -16,6 +16,9 @@
         </div>
         <div id="main_photo">
           <%= image_tag @post.photos.first.image.url(:medium), class: "main_photo" %>
+          <div class="delete_btn">
+            <%= link_to "消す", post_path(@post), method: :delete %>
+          </div>
         </div>
         <div id="desc_and_ingredients">
           <div id="ingredients_container">
